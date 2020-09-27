@@ -27,10 +27,21 @@ service Greeter {
   rpc SayHello (HelloRequest) returns (HelloReply) {}
   rpc getValue (NullRequest) returns (NumberRequest) {}
   rpc setValue (NumberRequest) returns (HelloReply) {}
+  rpc openDev (NullRequest) returns (DeviceState) {}
+  rpc getPathologies (NullRequest) returns (HelloReply) {}
+  // rpc getPathologies (NullRequest) returns (PathologiesList) {}
 }
 
 message NullRequest {
 
+}
+
+message PathologiesList {
+  repeated int32 list = 1;
+}
+
+message DeviceState {
+  bool state = 1;
 }
 
 message NumberRequest {
